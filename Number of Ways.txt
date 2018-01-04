@@ -1,0 +1,6 @@
+Number of Ways
+
+First, we should check our array can be split into three contiguous parts so that the sum of elements in each part is the same. If the sum of arrays is divisible by 3 then it can be split into three contiguous parts. Also if the length of the array is less then 3, it can not be split into three parts.
+To find the number of ways of splitting we will need prefix and suffix sums of our array. Let's take a new array of 'c' with the initial value of 0 and for each suffix sum of 'i' if the sum divisible by 3, c[i]=1. Then we will calculate suffix sum of c[i]. After it, for each 'i' (starting from 0 to n-2) if the prefix sum of our given array is divisible by 3, we will sum c[i+2] that will give the number of ways.
+
+We will calculate a prefix and suffix sum of given array and a suffix sum of c[i] that will take O(3n) time.

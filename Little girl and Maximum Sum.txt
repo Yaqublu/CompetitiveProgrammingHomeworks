@@ -1,0 +1,5 @@
+Little girl and Maximum Sum
+
+To solve this problem we need 2 vectors. One of them will contain elements of our array (vector<int>array) and the other will contain our queries (vector<int>count). For each i-th query, we will increase count[l-1] for left bound, and decrease count[r] for right bound. The prefix-sums of our 'count' vector will give us how many times we used the element in the given indexes for all queries. After sorting both vectors ('array' and 'count') we can subscribe count[i] with array[i] and summarize. This sum will be the maximum sum.
+
+The complexity of creating 2 vectors will take O(2n), O(n) time for prefix-sum. As we are sorting both our array it will take 2*O(nlogn) and O(n) time for calculating the maximum sum. O(2n)+O(n)+2*O(nlogn)+O(n)=O(nlogn)

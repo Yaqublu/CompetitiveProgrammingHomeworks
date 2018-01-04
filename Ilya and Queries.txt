@@ -1,0 +1,8 @@
+Ilya and Queries
+
+In order to find the number of characters such that s[i]=s[i-1] in the given string s, we should use prefix sum.
+-it is clear that for the first element of our sting there is no element that can be equal to it. So we take a vector and push 0. 
+-Starting from the second element if there are any s[i]=s[i-1], then we increase our 'sum' and push it to our vector. Otherwise, we only push 'sum' without increasing it.
+For given l[i] and r[i] the number of elements such taht s[i]=s[i-1] is v[r[i]]-v[r[i]].
+
+The time complexity of this algorithm is linear O(n) for creating a prefix-sum vector and constant time O(1) to find the number of elements such that s[i]=s[i-1] in the given interval.
