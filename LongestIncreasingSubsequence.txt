@@ -1,0 +1,7 @@
+Longest Increasing Subsequence
+
+For each element of our array, we will find prefix LIS (Longest Increasing Subsequence) (for a[i] we will look at a[0, ..., i-1]
+
+If a[j]<a[i], LIS[i] = max(LIS[j]) (0<j<i); LIS[i]=1, otherwise.
+
+So the problem runs in O(n^2) time.
