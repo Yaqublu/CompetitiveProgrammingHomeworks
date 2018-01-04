@@ -1,0 +1,5 @@
+Lexicographically Maximum Subsequence
+
+It is better to start to scan our string from right to left. Let's take max=a[n-1]. We will collect all characters in one array, which are greater than or equal to max. As soon as we find such character we change the value of max to a[i].
+
+As we scan our string once it will take O(n) time.

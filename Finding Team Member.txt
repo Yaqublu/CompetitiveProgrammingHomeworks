@@ -1,0 +1,5 @@
+Finding Team Member
+
+In order to find teammate of each contestant, we can take vector 'v' which will contain 2 contestants and their strength. Then we will sort our vector in decreasing order of strength of teams. Also, we will take another vector 't' which will initially 0. By scanning our vector, for i-th and j-th contestants if t[i] and t[j] are 0, then t[i]=j and t[j]=i.
+
+For m=(1+(2*n-1))*(2*n-1)/2 where 2n is the number of contestants it will take O(m) time to create vector 'v'. O(mlogm) for sorting and O(m) time to find teammates.

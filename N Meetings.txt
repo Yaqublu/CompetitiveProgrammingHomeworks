@@ -1,0 +1,5 @@
+N meetings in one room
+
+It is better to use a vector that will contain the beginning, ending times of meetings as well as the index of them. In order to find the maximum number of meetings that can be accommodated in the meeting room, we should sort our vector by their beginning time. For each accommodated meeting we save their finishing time and compare it with the others starting time.
+
+It will take O(n) time to fill our vector and O(nlogn) for sorting our vector. O(n) time for finding which of the meetings will take place 

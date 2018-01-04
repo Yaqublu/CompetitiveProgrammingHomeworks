@@ -1,0 +1,5 @@
+Kadane's Algorithm
+
+First we take 2 variables sum = 0 and max = A[i] (that will contain maximum sum of the array). By scanning elements from left to right, we start to calculate the sum and each time if 'sum' is greater than 'max' we change the value of 'max' to 'sum'. As we need the maximum sum of the contiguous sub-array if 'sum' becomes less than 0 we change the value of 'sum' to 0 (because summarizing negative elements will decrease our sum). As soon as we find new sum that is greater than our 'max', we update 'max'.
+
+We scan elements of array one time, so this algorithm will take linear time O(n)

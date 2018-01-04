@@ -1,0 +1,5 @@
+ChechForBST
+
+it is clear that in BST left-child should be less than its parent and right-child greater than its parent. Checking it recursively if one of the conditions above is not met for any parent root then it is not BST.
+
+The time complexity will be O(n) since each node is examined once.

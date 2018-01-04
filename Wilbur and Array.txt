@@ -1,0 +1,8 @@
+Wilbur and Array
+
+'count' will represent the number of operations. Initially, count=a[0] (note that the number of operations cannot be negative, so if a[0]<0 then count=-a[0])
+By scanning elements of array from 1 to n
+-if a[i]<a[i-1], then count += a[i-1]-a[i]
+-else if a[i]>a[i-1] then count += a[i]-a[i-1]
+
+We scan our array once, so it will take O(n) time

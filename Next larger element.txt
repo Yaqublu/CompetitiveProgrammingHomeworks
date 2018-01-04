@@ -1,0 +1,10 @@
+Next larger element
+
+To calculate Next Large Element we will use a stack.
+-We push the index of the first element to the stack.
+-For all elements from 1 to n-1
+  -while our stack is not empty, we give the value of the first element of the stack to 'element' and pop it from the stack. If our current element A[next] (where next=i) is greater than A[element]. We change the value of A[element] to A[next]. Otherwise, we push 'element' to our stack and break our loop.
+   -Then we also push index of our current element 'next' to our stack.
+-After the loop, if our stack is still not empty, then it means that these elements do not have any next greater element. So we change all these elements in the array to -1.
+
+The worse case is when our array sorted in a decreasing order. So, we push element to stack, then pop it for prosses our algorithm. As there is not any greater element,  we push it back to our stack. At the end, we again pop them from the stack. O(4n)=O(n)

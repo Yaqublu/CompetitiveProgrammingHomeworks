@@ -1,0 +1,11 @@
+Magic Number
+
+It is better to start look to each character of our string ('str') from right to left.
+-if the character str[i] is equal 4 then:
+   -if (s[i-1]==4 and s[i-2]==1) or if s[i-1]==1, then we can continue to search
+   -Otherwise, it is not magic number
+-Also if s[i]==1, we can continue to search
+-Otherwise, it is not magic number
+
+In the worse case, we will scan all the characters of our string, that will take O(n) time.
+   

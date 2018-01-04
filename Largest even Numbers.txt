@@ -1,0 +1,3 @@
+Largest Even Numbers
+
+For the given number we will look as a string and put all of its characters to a vector<int> . In order to get a largest even number we should put the smallest even element of our vector to the end. For rest element, we should put them starting from the beginning.

@@ -1,0 +1,5 @@
+Chat Room
+
+It is better to start searching from right to left in the string for each character of the word "hello" in the reverse order. As soon as we find the character that we are looking for we break our loop and start to look for next character of the word "hello" from where we broke our loop. 
+
+It will take O(n) time in the worse case and linear time O(1) to decide if it is "YES" or "NOT" 

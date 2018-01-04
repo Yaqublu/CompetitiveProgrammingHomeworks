@@ -1,0 +1,6 @@
+Two Heaps
+
+In order to create 2 heaps, we will use pair vector that will contain from elements of our array and their indexes. Then we will sort it. In order to get the maximum possible number of distinct four-digit numbers, we should first start to place numbers, amount of which are not more than 1. Only after this, we can start to places other numbers.
+While doing it, each time we should generate how many elements we put to each heap. Note that, if there is a number, amount of which is greater than 2, it is enough to count them once for each heap.
+
+Let's say we will have 'm' elements. Then it will take O(2m) time for filling our vector and O(mlogm) time sorting. To decide where we will put each element will take O(m) time.

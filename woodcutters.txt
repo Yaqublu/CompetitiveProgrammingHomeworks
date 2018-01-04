@@ -1,0 +1,8 @@
+Woodcutters
+
+In order to cut maximum trees, it is better to cut tree and fell it to left. It is clear that the first tree can be cut and fell to the left as well as the last tree can be cut and fell to the right. For other trees:
+-If x[i]-h[i]>x[i-1] we can cut it and fell to left
+-Else if x[i]+h[i]<x[i+1] we can cut it and fell to right
+-Otherwise, we cannot cut it.
+
+As we scan our array of tree once, the time complexity will be O(n)

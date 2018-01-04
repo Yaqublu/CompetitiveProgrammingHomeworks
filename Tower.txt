@@ -1,0 +1,5 @@
+Tower
+
+To find the total number of towers, we need to calculate wooden bars with different height. So the best way is to use vector. After sorting them we can easily calculate it. Then we need to count the amount of each different numbers. The largest amount will be the height of the largest tower.
+
+The complexity of std::sort is O(n Logn). Then for finding the height of the largest tower and their total number will take O(n) time.

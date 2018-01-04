@@ -1,0 +1,5 @@
+Masha and Forest
+
+The best way of finding the number of edges and the edges of the initial graph is to start from the leaf of trees. It is clear that, if the degree of a vertex is 1, then it is a leaf. Let's take an array leaf[] which will initially contain indexes of all leafs. Then for each leaf (v[i]), we will print its edge which is the value of that vertex and its XOR sum. After it, we can delete that vertex from our graph. It is enough just to change XOR sum of vertex 'u' that was adjacent to 'v' by calculating XOR sum of initial XOR sum of u  and value of v.
+
+It will take O(n) time to create a vector where we will save degree and XOR sum of vertexes, as well as finding all leafs of initial graph. After it, it will take O(m) time for finding edges where m is the number of edges.
