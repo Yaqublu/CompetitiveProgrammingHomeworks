@@ -1,0 +1,9 @@
+Largest Even Number
+
+In order to find the largest even number, we should first find the smallest even element of our string and sort other elements in decreasing order and put that smallest element to end.
+If there is not any even element, then just sort our elements in decreasing order and print them.
+It is clear that all elements of our string will be consist of {0,1,2..9}. So by scanning the elements of our string, we can count the number of each element, therefore, we will need a new array a[10]. While counting them, we will also search for minimum even element.
+
+It will take O(n) time to count, and O(n) time to print them in order that we need.
+
+
