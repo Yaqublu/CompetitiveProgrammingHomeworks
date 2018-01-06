@@ -1,0 +1,4 @@
+Max Path Sum
+
+Starting form the root we will recurcively calculate left and right sub trees and return max of them.
+ 

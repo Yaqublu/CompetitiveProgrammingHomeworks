@@ -1,0 +1,6 @@
+Preorder Traveler
+
+After creating our tree by given input, in preorder tree travel we will print:
+1. left child of root
+2. root
+3. right child of root
