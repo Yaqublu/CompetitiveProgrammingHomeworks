@@ -1,0 +1,9 @@
+Knapsack problem
+
+For n items we have v[1, ..., n] that represents value of these items and w[1, ..., n] that represents weight of these items. Also  we are given W which is the maximum total value in the knapsack. Again we will take matrix:
+
+	   0					  , if i=0 or j=0
+KS[i][j]=  max(v[i]+KS[i-1][j-w[i]] , KS[i-1][j]) , if w[i] <= j
+	   KS[i][j] = KS[i-1][j]		  , otherwise
+
+We will use O(n*W) memory and the same for building this matrix. O(1) to report the result.
