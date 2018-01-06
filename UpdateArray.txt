@@ -1,0 +1,5 @@
+Update array 
+
+For the operation of the update, we do not need to update the whole array. It is enough to just increase left bound and decrease right bound with the given value. After calculating prefix sum of the array will give us the new value of the array.
+
+For u update operations we will use O(2u) time and O(n) time for calculating prefix sum. 
