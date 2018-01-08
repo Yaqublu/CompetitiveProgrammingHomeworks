@@ -1,0 +1,13 @@
+Shift The String
+
+
+We will use Knuth-Morris-Pratt (KMP) algorithm to solve this problem. Let’s suppose that we are able, after one pass through the text, to identify all positions where an existing match with the pattern ends. Obviously, this will solve our problem. Since we know the length of the pattern, we can easily identify the starting position of every match.
+
+let's take k which will represent the length of prefix subset which is also suffix of our pattern. Initially, it will be 0.
+for q=2 to m (where m is the length of our pattern), if A[k+1]==P[q] then we will increase k++ and save this value of k in our newly created array pi in q-th position (this array will give us information about length of array till i-th position). But if A[k+1]!=P[q], then we redefine k=pi[k], so we will not need to start from the beginning because we already know which part of our pattern matched.
+
+it will take O(m) time.
+
+The same algorithm will go for finding str2 in str1. First str1=str1+str2. Then for i=1 to n (where n is the length of our new str1), if str2[q+1]==str1[i] then we will increase q++ and save this value of k in our newly created array pi in q-th position (this array will give us information about length of array till i-th position). But if str2[q+1]!=str1[i], then we redefine q=pi[q], so we will not need to start from the beginning because we already know which part of our str2 matches with str1.
+
+So this algorithm will take O(n) time.

@@ -1,0 +1,7 @@
+Longest Bitonic Subsequence (LBS)
+
+In order to find Longest Bitonic Subsequence we will first calculate Longest Increasing Subsequence and Longest Decreasing Subsequence of our array. The algorithm will look the same as Longest Increasing Subsequence (LIS), except we will not put the number of previous increasing subarray instead of putting the value of i-th element. Same for Longest Decreasing Subsequence (LDS) excep now we will start from end point. After it we will calculate LBS for each element: LBS[i] = LIS[i]-LDS[n-1-i]-1.
+
+The greater value of array LBS will be our answer.
+
+It will take O(3*n) time to build arrays LIS, LDS and LBS. also O(n) for finding greatest value of LBS.

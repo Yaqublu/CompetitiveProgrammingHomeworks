@@ -1,0 +1,12 @@
+Longest Palindromic Subsequence
+
+We will construct a matrix with n rows and n columns (where we will scan characters of our string in reverse order in rows, and in order in columns) 
+
+	    1				  , if i==j
+	    0				  , if i>j
+LPS[i][j] = lps[i+1][j-1]+2 		  , if str[i]==str[j]
+	    max(lps[i+1][j], lps[i][j-1]) , otherwise
+
+Here LPS[0][n-1] is the result.
+
+It will take O(n^2) as a memory of matrix and O(n^2) time to build this matrix.

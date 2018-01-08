@@ -1,0 +1,10 @@
+Subset Sum Problem
+
+We will find the total sum of the array. After dividing our sum by 2, we will construct a matrix with n + 1 rows and sum/2+1 columns. Here the matrix contains booleans. M[i][j] is true if and only if there exists a subset of the first i items with sum j. The entries of the first row M[i][0] are set to true while entries of the first column M[0][i] with false where 0<i<=n. 
+
+1. M[i][j]=M[i-1][j]			    , if j<a[i-1]
+2. M[i][v] = (M[i-1][v] || M[i-1][v-a[i]])  , otherwise
+
+M[n][sum/2+1] will be our result.
+
+Let say v=sum/2+1. To calculate total sum will take O(n) time. For construct a matrix we will use O(n*v) memory and O(n*v) time.

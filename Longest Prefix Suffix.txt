@@ -1,0 +1,7 @@
+Longest Prefix Suffix
+
+We will use Knuth-Morris-Pratt (KMP) algorithm to solve this problem. we should be able after one pass through the text, to identify all positions where an existing match with the pattern ends.
+let's take k which will represent the length of prefix subset which is also suffix of our array. Initially, it will be 0.
+for q=2 to m (where m is the length of our pattern), if A[k+1]==P[q] then we will increase k++ and save this value of k in our newly created array pi in q-th position (this array will give us information about length of array till i-th position). But if A[k+1]!=P[q], then we redefine k=pi[k], so we will not need to start from the beginning because we already know which part of our pattern matched.
+
+it will take O(m) time.

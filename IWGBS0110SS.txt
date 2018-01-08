@@ -1,0 +1,5 @@
+IWGBS0110SS
+
+Let say we are looking for F(n). Then, by taking any F(n-1) where digits number are n-1 and by appending a 1, or by taking any F(n-2) where digits number are n-2 and by appending 01 will us F(n). Thus, F(N) = F(n - 1) + F(n - 2). Also, it is clear that F(1) = 2 and F(0) = 1. As we are working with big numbers it is better to save all digits of our number in an array and do adding operation with arrays.
+
+It will take O(n) time for finding F(n).
