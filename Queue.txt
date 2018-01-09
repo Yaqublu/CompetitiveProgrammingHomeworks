@@ -1,0 +1,5 @@
+Queue
+
+First we will sort our given array. It is clear that if a[i]>i, it means that there's no acceptable order of the people in the queue. Otherwise, for each person we will increase it value if before it there is a person whose value is greater or equal to his/her value.
+
+It will take O(log n) for sorting and O(n^2) for finding the length of each person.
