@@ -20,4 +20,7 @@ if in our array a[i]!=a[i-1], then we do not need to change them, because it wil
 
 We will scan our array once that will take O(n) time.
 
+[code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Alternative%20Thinking.txt)
+
+
 ![image1](https://user-images.githubusercontent.com/32219705/34911030-f95c43b0-f8c9-11e7-9833-6f036afb38a9.jpg)
