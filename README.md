@@ -8,3 +8,6 @@ First, wi will calculate prefix sum of the amount of bars on the table. As Alice
 **Coplexity**
 
 The time complexity of this algorithm is linear O(n) for creating a prefix-sum vector and O(n) time to find the amount of bars consumed by Alice and Bob. O(n)+O(n)=O(2n)
+
+
+ˋls -aˋ
