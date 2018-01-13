@@ -1,0 +1,7 @@
+Find Pair
+
+We can calculate k-th pair with a formula without generating and sorting all pairs. After sorting of the given array of numbers, we will calculate the index of first and second members separately. In order to find the index of the first number of our k-th pair, we should divide that k by the number of our elements (which is 'n'). Let's say l=k/n (l is the index of the first number of our k-th pair). Then we count how many a[l] do we have ('amount'). 
+ - if there is only one value with a[l], then the second number of our k-th pair will be k mod n.
+ - Otherwise, we take the index of the first element that is equal to a[l] ('i') and then the index of the second number of our k-th pair will be (k - i*n)/amount
+
+It will take O(n) time to fill our vector and O(nlogn) time for sorting it. If there is a repeated element in worth case it will take at most O(n) time to find it and a linear time to calculate first and last element of our pair
