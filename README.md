@@ -84,7 +84,7 @@ For each location, we will calculate radius by measuring a distance between 2 po
 For sorting our vector we need O(nlogn) time. In order to find the minimum radius, in the worst case, it will take O(n).
 
 Find Pair [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/FindPair.cpp)
-
+------
 We can calculate k-th pair with a formula without generating and sorting all pairs. After sorting of the given array of numbers, we will calculate the index of first and second members separately. In order to find the index of the first number of our k-th pair, we should divide that k by the number of our elements (which is 'n'). Let's say l=k/n (l is the index of the first number of our k-th pair). Then we count how many a[l] do we have ('amount'). 
  - if there is only one value with a[l], then the second number of our k-th pair will be k mod n.
  - Otherwise, we take the index of the first element that is equal to a[l] ('i') and then the index of the second number of our k-th pair will be (k - i*n)/amount
@@ -193,7 +193,7 @@ To solve this problem we need 2 vectors. One of them will contain elements of ou
  
 The complexity of creating 2 vectors will take O(2n), O(n) time for prefix-sum. As we are sorting both our array it will take 2*O(nlogn) and O(n) time for calculating the maximum sum. O(2n)+O(n)+2*O(nlogn)+O(n)=O(nlogn)
 
-Update array [copy](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/UpdateArray.cpp)
+Update array [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/UpdateArray.cpp)
 ----
 For the operation of the update, we do not need to update the whole array. It is enough to just increase left bound and decrease right bound with the given value. After calculating prefix sum of the array will give us the new value of the array.
 
