@@ -310,9 +310,7 @@ This problem can be solved with Dynamic programming using recursion and memoriza
 1. for(i=0 to n) LCS[i][0];
 2. for(i=0 to m) LCS[0][j];
 
-	              LCS[i-1][j-1]+1	, if str[i-1]==str[j-1]
-3. LCS[i][j] =	LCS[i][j-1]	    , if LCS[i][j-1]>LCS[i-1][j]
-		             LCS[i-1][j]	    , if LCS[i][j-1]<LCS[i-1][j]
+![lcs](https://user-images.githubusercontent.com/32219705/34917783-532c21b0-f953-11e7-939e-2b2c5e723f68.jpg)
 
 LCS[n][m] will be our result.
  
@@ -324,9 +322,7 @@ Knapsack problem [code](https://github.com/Yaqublu/CompetitiveProgrammingHomewor
 ------
 For n items we have v[1, ..., n] that represents value of these items and w[1, ..., n] that represents weight of these items. Also  we are given W which is the maximum total value in the knapsack. Again we will take matrix:
 
-	                                          0					  , if i=0 or j=0
-KS[i][j]=   max(v[i]+KS[i-1][j-w[i]] , KS[i-1][j]) , if w[i] <= j
-	                                    KS[i-1][j]		  , otherwise
+![knapsack](https://user-images.githubusercontent.com/32219705/34917798-9d7c758a-f953-11e7-98de-3397ff9aecd3.jpg)
  
 *Coplexity*
  
