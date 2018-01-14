@@ -407,7 +407,7 @@ It will take O(n^2) as a memory of matrix and O(n^2) time to build this matrix.
 #06/12/2017
 -------
 
-Masha and Forest [copy](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Masha%20and%20Forest.cpp)
+Masha and Forest [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Masha%20and%20Forest.cpp)
 --------
 The best way of finding the number of edges and the edges of the initial graph is to start from the leaf of trees. It is clear that, if the degree of a vertex is 1, then it is a leaf. Let's take an array leaf[] which will initially contain indexes of all leafs. Then for each leaf (v[i]), we will print its edge which is the value of that vertex and its XOR sum. After it, we can delete that vertex from our graph. It is enough just to change XOR sum of vertex 'u' that was adjacent to 'v' by calculating XOR sum of initial XOR sum of u  and value of v.
  
