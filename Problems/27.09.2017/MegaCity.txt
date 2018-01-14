@@ -1,5 +1,0 @@
-Mega City
-
-For each location, we will calculate radius by measuring a distance between 2 points: (0,0) and (x,y). We will use pair vector that will store radius if each location and its population. After sorting our vector by radius, we will sum population of each location. As it is asked to find the minimum radius of the circle that the city needs to expand to in order to become a megacity, we will stop as soon as the sum of the population will increase 1000000.
-
-For sorting our vector we need O(nlogn) time. In order to find the minimum radius, in the worst case, it will take O(n).
