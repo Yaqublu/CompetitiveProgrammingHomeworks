@@ -75,12 +75,74 @@ For m=(1+(2*n-1))*(2*n-1)/2 where 2n is the number of contestants it will take O
 
 #27/09/2017
 -------
-#29/09/2017
--------
+Mega City [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/MegaCity.cpp)
+------
+For each location, we will calculate radius by measuring a distance between 2 points: (0,0) and (x,y). We will use pair vector that will store radius if each location and its population. After sorting our vector by radius, we will sum population of each location. As it is asked to find the minimum radius of the circle that the city needs to expand to in order to become a megacity, we will stop as soon as the sum of the population will increase 1000000.
+
+*Coplexity*
+ 
+For sorting our vector we need O(nlogn) time. In order to find the minimum radius, in the worst case, it will take O(n).
+
+Find Pair [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/FindPair.cpp)
+
+We can calculate k-th pair with a formula without generating and sorting all pairs. After sorting of the given array of numbers, we will calculate the index of first and second members separately. In order to find the index of the first number of our k-th pair, we should divide that k by the number of our elements (which is 'n'). Let's say l=k/n (l is the index of the first number of our k-th pair). Then we count how many a[l] do we have ('amount'). 
+ - if there is only one value with a[l], then the second number of our k-th pair will be k mod n.
+ - Otherwise, we take the index of the first element that is equal to a[l] ('i') and then the index of the second number of our k-th pair will be (k - i*n)/amount
+
+*Coplexity*
+ 
+It will take O(n) time to fill our vector and O(nlogn) time for sorting it. If there is a repeated element in worth case it will take at most O(n) time to find it and a linear time to calculate first and last element of our pair
+
+Two Heaps [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Two%20Heaps.cpp)
+-----
+In order to create 2 heaps, we will use pair vector that will contain from elements of our array and their indexes. Then we will sort it. In order to get the maximum possible number of distinct four-digit numbers, we should first start to place numbers, amount of which are not more than 1. Only after this, we can start to places other numbers.
+While doing it, each time we should generate how many elements we put to each heap. Note that, if there is a number, amount of which is greater than 2, it is enough to count them once for each heap.
+
+*Coplexity*
+ 
+Let's say we will have 'm' elements. Then it will take O(2m) time for filling our vector and O(mlogm) time sorting. To decide where we will put each element will take O(m) time.
+
 #05/10/2017
 -------
+
+Invertion Count
+-------
+
+Largest Even Number [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Largest%20Even%20Numbers.cpp)
+------
+In order to find the largest even number, we should first find the smallest even element of our string and sort other elements in decreasing order and put that smallest element to end.
+If there is not any even element, then just sort our elements in decreasing order and print them.
+It is clear that all elements of our string will be consist of {0,1,2..9}. So by scanning the elements of our string, we can count the number of each element, therefore, we will need a new array a[10]. While counting them, we will also search for minimum even element.
+
+*Coplexity*
+ 
+It will take O(n) time to count, and O(n) time to print them in order that we need.
+
 #11/10/2017
 -------
+Firing Employees
+-------
+Lets look at example:
+![image1](https://user-images.githubusercontent.com/32219705/34911273-ebdbf0d6-f8cf-11e7-9674-25a2516b20a1.jpg)
+
+We will take vector<int> v[n+1] and push the rank of immediate seniors. So here it will be:
+v[2][0] = 1
+v[3][0] = 2
+v[5][0] = 3
+v[3][1] = 4
+v[0][0] = 5
+v[5][1] = 6
+v[2][0] = 7
+![image2](https://user-images.githubusercontent.com/32219705/34911282-2dc5d12e-f8d0-11e7-975b-53092b4d38fe.jpg)
+
+*Coplexity*
+ 
+Here v[0][0] is Mr Alfred.  So we start from the top and go 
+down of the tree. And each time we will add to the number of 
+siniors of the current employee, the number of seniors of its root. 
+Time complexity of such algorithm is O(n).
+
+
 #13/10/2017
 -------
 #18/10/2017
