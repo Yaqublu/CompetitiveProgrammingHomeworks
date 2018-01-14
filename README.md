@@ -123,16 +123,25 @@ It will take O(n) time to count, and O(n) time to print them in order that we ne
 Firing Employees
 -------
 Lets look at example:
+
 ![image1](https://user-images.githubusercontent.com/32219705/34911273-ebdbf0d6-f8cf-11e7-9674-25a2516b20a1.jpg)
 
 We will take vector<int> v[n+1] and push the rank of immediate seniors. So here it will be:
+
 v[2][0] = 1
+
 v[3][0] = 2
+
 v[5][0] = 3
+
 v[3][1] = 4
+
 v[0][0] = 5
+
 v[5][1] = 6
+
 v[2][0] = 7
+
 ![image2](https://user-images.githubusercontent.com/32219705/34911282-2dc5d12e-f8d0-11e7-975b-53092b4d38fe.jpg)
 
 *Coplexity*
