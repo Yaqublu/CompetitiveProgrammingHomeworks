@@ -120,7 +120,7 @@ It will take O(n) time to count, and O(n) time to print them in order that we ne
 
 #11/10/2017
 -------
-Firing Employees
+Firing Employees [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/FiringEmployees.cpp)
 -------
 Lets look at example:
 
