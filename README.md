@@ -154,6 +154,53 @@ Time complexity of such algorithm is O(n).
 
 #13/10/2017
 -------
+Ilya and Queries [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Ilya%20and%20Queries.cpp)
+------
+In order to find the number of characters such that s[i]=s[i-1] in the given string s, we should use prefix sum.
+-it is clear that for the first element of our sting there is no element that can be equal to it. So we take a vector and push 0. 
+-Starting from the second element if there are any s[i]=s[i-1], then we increase our 'sum' and push it to our vector. Otherwise, we only push 'sum' without increasing it.
+For given l[i] and r[i] the number of elements such taht s[i]=s[i-1] is v[r[i]]-v[r[i]].
+
+*Coplexity*
+ 
+The time complexity of this algorithm is linear O(n) for creating a prefix-sum vector and constant time O(1) to find the number of elements such that s[i]=s[i-1] in the given interval.
+
+Alice, Bob and Chocolate [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Alice%2C%20Bob%20and%20Chocolate.cpp)
+----
+First, wi will calculate prefix sum of the amount of bars on the table. As Alice starts to eat from left to right it will also show the amount of bars that Alica can it. 
+-Let's say Alice stands in position i=0 and Bob stands in position j=n-1.
+-It is clear that while they eat chocolates 'i' cannot be greater than 'j'.
+-Also, the amount of bars are representing the time that should be spent to eat them. So if the amount of bars that Alice eat is greater than the amount of bars that Bob eat, Bob will take next chocolate. Or if the amount of bars that Alice eat is less than the amount of bars that Bob eat, then Alice will take next chocolate.
+
+*Coplexity*
+ 
+The time complexity of this algorithm is linear O(n) for creating a prefix-sum vector and O(n) time to find the amount of bars consumed by Alice and Bob. O(n)+O(n)=O(2n)
+
+Number of Ways [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Number%20of%20Ways.cpp)
+-----
+First, we should check our array can be split into three contiguous parts so that the sum of elements in each part is the same. If the sum of arrays is divisible by 3 then it can be split into three contiguous parts. Also if the length of the array is less then 3, it can not be split into three parts.
+To find the number of ways of splitting we will need prefix and suffix sums of our array. Let's take a new array of 'c' with the initial value of 0 and for each suffix sum of 'i' if the sum divisible by 3, c[i]=1. Then we will calculate suffix sum of c[i]. After it, for each 'i' (starting from 0 to n-2) if the prefix sum of our given array is divisible by 3, we will sum c[i+2] that will give the number of ways.
+
+*Coplexity*
+ 
+We will calculate a prefix and suffix sum of given array and a suffix sum of c[i] that will take O(3n) time.
+
+Little girl and Maximum Sum [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Little%20girl%20and%20Maximum%20Sum.cpp)
+------
+To solve this problem we need 2 vectors. One of them will contain elements of our array (vector<int>array) and the other will contain our queries (vector<int>count). For each i-th query, we will increase count[l-1] for left bound, and decrease count[r] for right bound. The prefix-sums of our 'count' vector will give us how many times we used the element in the given indexes for all queries. After sorting both vectors ('array' and 'count') we can subscribe count[i] with array[i] and summarize. This sum will be the maximum sum.
+
+*Coplexity*
+ 
+The complexity of creating 2 vectors will take O(2n), O(n) time for prefix-sum. As we are sorting both our array it will take 2*O(nlogn) and O(n) time for calculating the maximum sum. O(2n)+O(n)+2*O(nlogn)+O(n)=O(nlogn)
+
+Update array [copy](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/UpdateArray.cpp)
+----
+For the operation of the update, we do not need to update the whole array. It is enough to just increase left bound and decrease right bound with the given value. After calculating prefix sum of the array will give us the new value of the array.
+
+*Coplexity*
+ 
+For u update operations we will use O(2u) time and O(n) time for calculating prefix sum. 
+
 #18/10/2017
 -------
 #20/10/2017
@@ -168,6 +215,67 @@ Time complexity of such algorithm is O(n).
 -------
 #15/11/2017
 -------
+
+N meetings in one room [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/N%20Meetings.cpp)
+-----
+It is better to use a vector that will contain the beginning, ending times of meetings as well as the index of them. In order to find the maximum number of meetings that can be accommodated in the meeting room, we should sort our vector by their beginning time. For each accommodated meeting we save their finishing time and compare it with the others starting time.
+
+*Coplexity*
+ 
+It will take O(n) time to fill our vector and O(nlogn) for sorting our vector. O(n) time for finding which of the meetings will take place 
+
+Chat Room [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Chat%20Room.cpp)
+-----
+It is better to start searching from right to left in the string for each character of the word "hello" in the reverse order. As soon as we find the character that we are looking for we break our loop and start to look for next character of the word "hello" from where we broke our loop. 
+
+*Coplexity*
+ 
+It will take O(n) time in the worse case and linear time O(1) to decide if it is "YES" or "NOT" 
+
+Magic Number [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Magic%20Number.cpp)
+---------
+It is better to start look to each character of our string ('str') from right to left.
+-if the character str[i] is equal 4 then:
+   -if (s[i-1]==4 and s[i-2]==1) or if s[i-1]==1, then we can continue to search
+   -Otherwise, it is not magic number
+-Also if s[i]==1, we can continue to search
+-Otherwise, it is not magic number
+
+*Coplexity*
+ 
+In the worse case, we will scan all the characters of our string, that will take O(n) time.
+
+Wilbur and Array [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Wilbur%20and%20Array.cpp)
+-----
+'count' will represent the number of operations. Initially, count=a[0] (note that the number of operations cannot be negative, so if a[0]<0 then count=-a[0])
+By scanning elements of array from 1 to n
+-if a[i]<a[i-1], then count += a[i-1]-a[i]
+-else if a[i]>a[i-1] then count += a[i]-a[i-1]
+
+*Coplexity*
+ 
+We scan our array once, so it will take O(n) time
+
+Alternative Thinking [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Alternative%20Thinking.cpp)
+----
+if in our array a[i]!=a[i-1], then we do not need to change them, because it will not affect the result. Lets look at example: for '10101' we will find 4 where str[i]!=str[i-1]. But length is 5. So we initialize s=1. It does not matter how long will be our contiguous non-empty substring because it only will add to our alternating subsequence 2 more {1,0}. So s will be s+2. As the length can be increase n (length of our initial array), we will take min(n, s).
+
+*Coplexity*
+
+We will scan our array once that will take O(n) time.
+
+
+
+
+
+
+
+
+
+
+
+
+
 #17/11/2017
 -------
 #22/11/2017
@@ -201,17 +309,6 @@ Time complexity of such algorithm is O(n).
 
 
 
-Alice, Bob and Chocolate [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Alice%2C%20Bob%20and%20Chocolate.cpp)
-----
-First, wi will calculate prefix sum of the amount of bars on the table. As Alice starts to eat from left to right it will also show the amount of bars that Alica can it. 
--Let's say Alice stands in position i=0 and Bob stands in position j=n-1.
--It is clear that while they eat chocolates 'i' cannot be greater than 'j'.
--Also, the amount of bars are representing the time that should be spent to eat them. So if the amount of bars that Alice eat is greater than the amount of bars that Bob eat, Bob will take next chocolate. Or if the amount of bars that Alice eat is less than the amount of bars that Bob eat, then Alice will take next chocolate.
-
-*Coplexity*
-
-The time complexity of this algorithm is linear O(n) for creating a prefix-sum vector and O(n) time to find the amount of bars consumed by Alice and Bob. O(n)+O(n)=O(2n)
-
 
 Alternative Thinking [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Alternative%20Thinking.cpp)
 ----
@@ -221,16 +318,6 @@ if in our array a[i]!=a[i-1], then we do not need to change them, because it wil
 *Coplexity*
 
 We will scan our array once that will take O(n) time.
-
-
-Chat Room [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Chat%20Room.cpp)
-----
-
-It is better to start searching from right to left in the string for each character of the word "hello" in the reverse order. As soon as we find the character that we are looking for we break our loop and start to look for next character of the word "hello" from where we broke our loop. 
-
-*Coplexity*
-
-It will take O(n) time in the worse case and linear time O(1) to decide if it is "YES" or "NOT" 
 
 
 
