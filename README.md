@@ -259,27 +259,86 @@ We scan our array once, so it will take O(n) time
 Alternative Thinking [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Alternative%20Thinking.cpp)
 ----
 if in our array a[i]!=a[i-1], then we do not need to change them, because it will not affect the result. Lets look at example: for '10101' we will find 4 where str[i]!=str[i-1]. But length is 5. So we initialize s=1. It does not matter how long will be our contiguous non-empty substring because it only will add to our alternating subsequence 2 more {1,0}. So s will be s+2. As the length can be increase n (length of our initial array), we will take min(n, s).
-
+ 
 *Coplexity*
-
+ 
 We will scan our array once that will take O(n) time.
-
-
-
-
-
-
-
-
-
-
-
-
 
 #17/11/2017
 -------
+Lexicographically Maximum Subsequence [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Lexicographically%20Maximum%20Subsequence.cpp)
+--------
+It is better to start to scan our string from right to left. Let's take max=a[n-1]. We will collect all characters in one array, which are greater than or equal to max. As soon as we find such character we change the value of max to a[i].
+ 
+*Coplexity*
+ 
+As we scan our string once it will take O(n) time.
+
+Woodcutters [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Woodcutters.cpp)
+------
+In order to cut maximum trees, it is better to cut tree and fell it to left. It is clear that the first tree can be cut and fell to the left as well as the last tree can be cut and fell to the right. For other trees:
+-If x[i]-h[i]>x[i-1] we can cut it and fell to left
+-Else if x[i]+h[i]<x[i+1] we can cut it and fell to right
+-Otherwise, we cannot cut it.
+ 
+*Coplexity*
+ 
+As we scan our array of tree once, the time complexity will be O(n)
+
+Queue [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Queue.cpp)
+-----
+First we will sort our given array. It is clear that if a[i]>i, it means that there's no acceptable order of the people in the queue. Otherwise, for each person we will increase it value if before it there is a person whose value is greater or equal to his/her value.
+ 
+*Coplexity*
+ 
+It will take O(log n) for sorting and O(n^2) for finding the length of each person.
+
 #22/11/2017
 -------
+IWGBS0110SS [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/IWGBS0110SS.cpp)
+------
+Let say we are looking for F(n). Then, by taking any F(n-1) where digits number are n-1 and by appending a 1, or by taking any F(n-2) where digits number are n-2 and by appending 01 will us F(n). Thus, F(N) = F(n - 1) + F(n - 2). Also, it is clear that F(1) = 2 and F(0) = 1. As we are working with big numbers it is better to save all digits of our number in an array and do adding operation with arrays.
+ 
+*Coplexity*
+ 
+It will take O(n) time for finding F(n).
+
+Longest Common Subsequence [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Longest%20Common%20Subsequence.cpp)
+------
+This problem can be solved with Dynamic programming using recursion and memorization. We will take matrix and for 2 strings str1 and st2 with length n and m respectively:
+
+1. for(i=0 to n) LCS[i][0];
+2. for(i=0 to m) LCS[0][j];
+
+	              LCS[i-1][j-1]+1	, if str[i-1]==str[j-1]
+3. LCS[i][j] =	LCS[i][j-1]	    , if LCS[i][j-1]>LCS[i-1][j]
+		             LCS[i-1][j]	    , if LCS[i][j-1]<LCS[i-1][j]
+
+LCS[n][m] will be our result.
+ 
+*Coplexity*
+ 
+The algorithm takes O(n*m) memory and to build our matrix O(n*m). O(1) to report our result.
+
+Knapsack problem [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Knapsack%20problem.cpp)
+------
+For n items we have v[1, ..., n] that represents value of these items and w[1, ..., n] that represents weight of these items. Also  we are given W which is the maximum total value in the knapsack. Again we will take matrix:
+
+	                                          0					  , if i=0 or j=0
+KS[i][j]=   max(v[i]+KS[i-1][j-w[i]] , KS[i-1][j]) , if w[i] <= j
+	                                    KS[i-1][j]		  , otherwise
+ 
+*Coplexity*
+ 
+We will use O(n*W) memory and the same for building this matrix. O(1) to report the result.
+
+
+
+
+
+
+
+
 #24/11/2017
 -------
 #29/11/2017
@@ -292,41 +351,5 @@ We will scan our array once that will take O(n) time.
 -------
 #15/12/2017
 -------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Alternative Thinking [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Alternative%20Thinking.cpp)
-----
-
-if in our array a[i]!=a[i-1], then we do not need to change them, because it will not affect the result. Lets look at example: for '10101' we will find 4 where str[i]!=str[i-1]. But length is 5. So we initialize s=1. It does not matter how long will be our contiguous non-empty substring because it only will add to our alternating subsequence 2 more {1,0}. So s will be s+2. As the length can be increase n (length of our initial array), we will take min(n, s).
-
-*Coplexity*
-
-We will scan our array once that will take O(n) time.
-
-
-
-
-
-
-
-
-
-
 
 ![image1](https://user-images.githubusercontent.com/32219705/34911030-f95c43b0-f8c9-11e7-9833-6f036afb38a9.jpg)
