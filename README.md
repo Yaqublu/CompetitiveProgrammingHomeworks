@@ -328,24 +328,121 @@ For n items we have v[1, ..., n] that represents value of these items and w[1, .
  
 We will use O(n*W) memory and the same for building this matrix. O(1) to report the result.
 
-
-
-
-
-
-
-
 #24/11/2017
 -------
-#29/11/2017
--------
-#01/12/2017
--------
-#06/12/2017
--------
-#13/12/2017
--------
-#15/12/2017
--------
+Longest Increasing Subsequence [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/LongestIncreasingSubsequence.cpp)
+------
+For each element of our array, we will find prefix LIS (Longest Increasing Subsequence) (for a[i] we will look at a[0, ..., i-1]
+
+If a[j]<a[i], LIS[i] = max(LIS[j]) (0<j<i); LIS[i]=1, otherwise.
+ 
+*Coplexity*
+ 
+So the problem runs in O(n^2) time.
+
+Minimum Jump [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/MinJump.cpp)
+------
+First of all, we should look at some cases. If the length of our array is less than 2, we will not jump (return 0;). Or if our any element of our array is equal 0 (except last one), it means that we cannot jump anymore and stuck (return -1;).
+As the value of elements of array shows max number of jumps that we can do, we will take a new variable ‘s’ and initialize it with a[0]. Starting from the 2nd element of the array we will make s steps. While going through array s steps, we will remember maximum element of the array in the range (i, i+s). It is clear that we need bigger element but it should be near to the end of our array. For example, we will go s=4 steps through {7, 2, 6, 3}, so we will take as a jump element {6}. So how decide that which element we should take?   
 
 ![image1](https://user-images.githubusercontent.com/32219705/34911030-f95c43b0-f8c9-11e7-9833-6f036afb38a9.jpg)
+
+As shown in the picture above we can jump 6 steps. We go through these 6 elements and memorize bigger number among a[i]+i. Here 7+5 > 8 +2. Now our ‘maxx’=7+5=12 and we are in the position j=7 (a[7]). From the picture, it is clear that we already went 2 steps out of 7 steps and there are left 5 steps. So how we can get it? Maxx-j will give us the number of steps that left.
+ 
+*Coplexity*
+ 
+Edit Distance [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/EditDistance.cpp)
+-----
+
+![edit distance](https://user-images.githubusercontent.com/32219705/34917879-8fba25a4-f954-11e7-8cc7-3ca2f1ce6271.jpg)
+
+In order to find the number of changes in str1 it is better to use similar algorithm with Longest common sub sequence, but with some differentions. We will use matrix LS[][]. Lets first initialize LP[i][0]=i and LP[0][i] where 0<i<n. if str1[i-1]==str[j-1] then LP[i][j]=LP[i-1][j-1], because LP[i-1][j-1] saves changes on the part of the string str1 with length i and the part of the string str2 with length j. Otherwise, we will look at minimum of LP[i-1][j-1], LP[i][j-1] and LP[i][j-1] that will give us minimum changes on the different lengths of our strings.
+ 
+*Coplexity*
+ 
+The algorithm will take quadratics memory and run time ( O(n*m)). 
+
+#29/11/2017
+-------
+Longest Bitonic Subsequence (LBS) [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Longest%20Bitonic%20Subsequence.cpp)
+-----
+In order to find Longest Bitonic Subsequence we will first calculate Longest Increasing Subsequence and Longest Decreasing Subsequence of our array. The algorithm will look the same as Longest Increasing Subsequence (LIS), except we will not put the number of previous increasing subarray instead of putting the value of i-th element. Same for Longest Decreasing Subsequence (LDS) excep now we will start from end point. After it we will calculate LBS for each element: LBS[i] = LIS[i]-LDS[n-1-i]-1.
+
+The greater value of array LBS will be our answer.
+ 
+*Coplexity*
+ 
+It will take O(3*n) time to build arrays LIS, LDS and LBS. also O(n) for finding greatest value of LBS.
+
+Subset Sum Problem [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Subset%20Sum%20Problem.cpp)
+----
+We will find the total sum of the array. After dividing our sum by 2, we will construct a matrix with n + 1 rows and sum/2+1 columns. Here the matrix contains booleans. M[i][j] is true if and only if there exists a subset of the first i items with sum j. The entries of the first row M[i][0] are set to true while entries of the first column M[0][i] with false where 0<i<=n. 
+
+![sum](https://user-images.githubusercontent.com/32219705/34917949-395889d4-f955-11e7-829d-57aac48baf9a.jpg)
+
+M[n][sum/2+1] will be our result.
+ 
+*Coplexity*
+ 
+Let say v=sum/2+1. To calculate total sum will take O(n) time. For construct a matrix we will use O(n*v) memory and O(n*v) time.
+
+#01/12/2017
+-------
+
+Vertex Cover
+------
+
+Longest Palindromic Subsequence [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Longest%20Palindromic%20Subsequence.cpp)
+------
+We will construct a matrix with n rows and n columns (where we will scan characters of our string in reverse order in rows, and in order in columns) 
+
+![lps](https://user-images.githubusercontent.com/32219705/34918041-e5a8ddb0-f955-11e7-9826-308c2143d2f4.jpg)
+
+Here LPS[0][n-1] is the result.
+ 
+*Coplexity*
+ 
+It will take O(n^2) as a memory of matrix and O(n^2) time to build this matrix.
+
+#06/12/2017
+-------
+
+Masha and Forest [copy](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Masha%20and%20Forest.cpp)
+--------
+The best way of finding the number of edges and the edges of the initial graph is to start from the leaf of trees. It is clear that, if the degree of a vertex is 1, then it is a leaf. Let's take an array leaf[] which will initially contain indexes of all leafs. Then for each leaf (v[i]), we will print its edge which is the value of that vertex and its XOR sum. After it, we can delete that vertex from our graph. It is enough just to change XOR sum of vertex 'u' that was adjacent to 'v' by calculating XOR sum of initial XOR sum of u  and value of v.
+ 
+*Coplexity*
+ 
+It will take O(n) time to create a vector where we will save degree and XOR sum of vertexes, as well as finding all leafs of initial graph. After it, it will take O(m) time for finding edges where m is the number of edges.
+
+#13/12/2017
+-------
+Longest Prefix Suffix [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Longest%20Prefix%20Suffix.cpp)
+------
+We will use Knuth-Morris-Pratt (KMP) algorithm to solve this problem. we should be able after one pass through the text, to identify all positions where an existing match with the pattern ends.
+let's take k which will represent the length of prefix subset which is also suffix of our array. Initially, it will be 0.
+for q=2 to m (where m is the length of our pattern), if A[k+1]==P[q] then we will increase k++ and save this value of k in our newly created array pi in q-th position (this array will give us information about length of array till i-th position). But if A[k+1]!=P[q], then we redefine k=pi[k], so we will not need to start from the beginning because we already know which part of our pattern matched.
+ 
+*Coplexity*
+ 
+it will take O(m) time.
+
+Shift The String [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Shift%20The%20String.cpp)
+------
+We will use Knuth-Morris-Pratt (KMP) algorithm to solve this problem. Let’s suppose that we are able, after one pass through the text, to identify all positions where an existing match with the pattern ends. Obviously, this will solve our problem. Since we know the length of the pattern, we can easily identify the starting position of every match.
+
+let's take k which will represent the length of prefix subset which is also suffix of our pattern. Initially, it will be 0.
+for q=2 to m (where m is the length of our pattern), if A[k+1]==P[q] then we will increase k++ and save this value of k in our newly created array pi in q-th position (this array will give us information about length of array till i-th position). But if A[k+1]!=P[q], then we redefine k=pi[k], so we will not need to start from the beginning because we already know which part of our pattern matched.
+
+it will take O(m) time.
+
+The same algorithm will go for finding str2 in str1. First str1=str1+str2. Then for i=1 to n (where n is the length of our new str1), if str2[q+1]==str1[i] then we will increase q++ and save this value of k in our newly created array pi in q-th position (this array will give us information about length of array till i-th position). But if str2[q+1]!=str1[i], then we redefine q=pi[q], so we will not need to start from the beginning because we already know which part of our str2 matches with str1.
+ 
+*Coplexity*
+ 
+So this algorithm will take O(n) time.
+
+#15/12/2017
+-------
+New Distinct Substring
+------
