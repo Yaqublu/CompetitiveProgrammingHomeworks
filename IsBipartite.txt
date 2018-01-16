@@ -1,0 +1,4 @@
+First of all, if our graph is bipartite graph then there should not be a path from vertex u to u. So if G[u][u]==1 then ve return false.
+For every vertex u, we check if there is an edge to any other vertex v and it does not have color then we give it a new color. However, if that vertex v has already been colored and its color is same as vertex u, then we return false.
+
+We will check the connection of each vertex with others and with itself. So it will take O(V*V), where V is number of vertices
