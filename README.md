@@ -209,6 +209,15 @@ For u update operations we will use O(2u) time and O(n) time for calculating pre
 -------
 #27/10/2017
 -------
+X Total Shapes [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/X%20Total%20Shapes.cbp)
+------
+
+IsBipartite
+------
+
+Fox and Names
+------
+
 #08/11/2017
 -------
 #10/11/2017
