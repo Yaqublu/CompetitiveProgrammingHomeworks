@@ -212,8 +212,14 @@ For u update operations we will use O(2u) time and O(n) time for calculating pre
 X Total Shapes [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/X%20Total%20Shapes.cpp)
 ------
 
-IsBipartite
+IsBipartite [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/IsBipartite.cpp)
 ------
+First of all, if our graph is bipartite graph then there should not be a path from vertex u to u. So if G[u][u]==1 then ve return false.
+For every vertex u, we check if there is an edge to any other vertex v and it does not have color then we give it a new color. However, if that vertex v has already been colored and its color is same as vertex u, then we return false.
+
+*Coplexity*
+ 
+We will check the connection of each vertex with others and with itself. So it will take O(V*V), where V is number of vertices
 
 Fox and Names
 ------
@@ -224,8 +230,8 @@ Fox and Names
 -------
 
 Minimum Spanning Tree [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Minimum%20Spanning%20Tree.cpp)
-
 -----
+
 #15/11/2017
 -------
 
