@@ -105,7 +105,7 @@ Let's say we will have 'm' elements. Then it will take O(2m) time for filling ou
 #05/10/2017
 -------
 
-Invertion Count
+Invertion Count [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Invertion%20Count.cpp)
 -------
 
 Largest Even Number [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Largest%20Even%20Numbers.cpp)
@@ -222,6 +222,10 @@ Fox and Names
 -------
 #10/11/2017
 -------
+
+Minimum Spanning Tree [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Minimum%20Spanning%20Tree.cpp)
+
+-----
 #15/11/2017
 -------
 
