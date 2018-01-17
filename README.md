@@ -205,6 +205,12 @@ For u update operations we will use O(2u) time and O(n) time for calculating pre
 -------
 #20/10/2017
 -------
+Powerful Array [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Powerful%20Array.cpp)
+-----
+
+The best solution for this problem is Mo's algorithm. First, we divide our array into sqrt(n) buckets with the length of sqrt(n). The query will belong to Pth bucket if the opening of that query is fall in Pth bucket. Then we will reorder our queries q(L,R) in ascending order of R (whose L are in the same bucket).
+After sorting we can apply Mo's algorithm which will take O(n*sqrt(n))
+
 #25/10/2017
 -------
 #27/10/2017
