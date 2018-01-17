@@ -217,6 +217,13 @@ After sorting we can apply Mo's algorithm which will take O(n*sqrt(n))
 -------
 X Total Shapes [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/X%20Total%20Shapes.cpp)
 ------
+Starting from the top we will scan our matrix and we will mark all the nodes as visited. if str[i][j]=='O' then we do nothing. Otherwise, if  str[i][j]=='X' and was already visited then look its neighbours if there is any 'X' (str[i+1][j], str[i][j+1], str[i-1][j], str[i][j-1]) and mark them as visited.
+But, if str[i][j]=='X' and was not visited, then we have 2 ways. 1. If str[i+1][j] and str[i][j+1] was not visited then it means it is a new shape of 'X' so we increase total number of shapes
+2. Otherwise, We just visit  str[i+1][j] and str[i][j+1].
+
+*Coplexity*
+ 
+As we scan our matrix once, So it will take O(n*m). Also, Besides our matrix, we need a new matrix visited[n][m] to mark all visited nodes (O(n*m) memory).
 
 IsBipartite [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/IsBipartite.cpp)
 ------
