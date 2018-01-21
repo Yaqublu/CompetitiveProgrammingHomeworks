@@ -151,7 +151,33 @@ down of the tree. And each time we will add to the number of
 siniors of the current employee, the number of seniors of its root. 
 Time complexity of such algorithm is O(n).
 
+ChechForBST [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/ChechForBST.cpp)
+------
+it is clear that in BST left-child should be less than its parent and right-child greater than its parent. Checking it recursively if one of the conditions above is not met for any parent root then it is not BST.
 
+*Coplexity*
+ 
+The time complexity will be O(n) since each node is examined once.
+
+Preorder Traveler [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Preorder%20Traveler.cpp)
+-------
+After creating our tree by given input, in preorder tree travel we will print:
+1. left child of root
+2. root
+3. right child of root
+
+*Coplexity*
+ 
+Time complexity is O(n)
+
+Max Path Sum [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Max%20Path%20Sum.cpp)
+---------
+Starting form the root we will recurcively calculate left and right sub trees and return max of them.
+
+*Coplexity*
+ 
+Time complexity is O(n)
+ 
 #13/10/2017
 -------
 Ilya and Queries [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Ilya%20and%20Queries.cpp)
