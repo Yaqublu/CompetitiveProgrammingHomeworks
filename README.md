@@ -227,8 +227,6 @@ For the operation of the update, we do not need to update the whole array. It is
  
 For u update operations we will use O(2u) time and O(n) time for calculating prefix sum. 
 
-#18/10/2017
--------
 #20/10/2017
 -------
 Powerful Array [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Powerful%20Array.cpp)
@@ -237,8 +235,6 @@ Powerful Array [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks
 The best solution for this problem is Mo's algorithm. First, we divide our array into sqrt(n) buckets with the length of sqrt(n). The query will belong to Pth bucket if the opening of that query is fall in Pth bucket. Then we will reorder our queries q(L,R) in ascending order of R (whose L are in the same bucket).
 After sorting we can apply Mo's algorithm which will take O(n*sqrt(n))
 
-#25/10/2017
--------
 #27/10/2017
 -------
 X Total Shapes [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/X%20Total%20Shapes.cpp)
@@ -260,11 +256,6 @@ For every vertex u, we check if there is an edge to any other vertex v and it do
  
 We will check the connection of each vertex with others and with itself. So it will take O(V*V), where V is number of vertices
 
-Fox and Names
-------
-
-#08/11/2017
--------
 #10/11/2017
 -------
 
@@ -447,9 +438,6 @@ Let say v=sum/2+1. To calculate total sum will take O(n) time. For construct a m
 #01/12/2017
 -------
 
-Vertex Cover
-------
-
 Longest Palindromic Subsequence [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Longest%20Palindromic%20Subsequence.cpp)
 ------
 We will construct a matrix with n rows and n columns (where we will scan characters of our string in reverse order in rows, and in order in columns) 
@@ -499,8 +487,3 @@ The same algorithm will go for finding str2 in str1. First str1=str1+str2. Then 
 *Coplexity*
  
 So this algorithm will take O(n) time.
-
-#15/12/2017
--------
-New Distinct Substring
-------
