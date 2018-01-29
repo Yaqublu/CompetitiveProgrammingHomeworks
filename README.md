@@ -97,7 +97,7 @@ It will take O(n) time to fill our vector and O(nlogn) time for sorting it. If t
 
 Two Heaps [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Two%20Heaps.cpp)
 -----
-In order to create 2 heaps, we will use pair vector that will contain from elements of our array and their indexes. Then we will sort it. In order to get the maximum possible number of distinct four-digit numbers, we should first start to place numbers, amount of which are not more than 1. Only after this, we can start to places other numbers.
+In order to create 2 heaps, we will use pair vector that will contain elements of our array and their indexes. Then we will sort it. In order to get the maximum possible number of distinct four-digit numbers, we should first start to place numbers, amount of which are not more than 1. Only after this, we can start to places other numbers.
 While doing it, each time we should generate how many elements we put to each heap. Note that, if there is a number, amount of which is greater than 2, it is enough to count them once for each heap.
 
 *Coplexity*
@@ -153,7 +153,7 @@ down of the tree. And each time we will add to the number of
 siniors of the current employee, the number of seniors of its root. 
 Time complexity of such algorithm is O(n).
 
-ChechForBST [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/ChechForBST.cpp)
+CheckForBST [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/ChechForBST.cpp)
 ------
 it is clear that in BST left-child should be less than its parent and right-child greater than its parent. Checking it recursively if one of the conditions above is not met for any parent root then it is not BST.
 
