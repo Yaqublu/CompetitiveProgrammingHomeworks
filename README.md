@@ -358,9 +358,6 @@ Longest Common Subsequence [code](https://github.com/Yaqublu/CompetitiveProgramm
 ------
 This problem can be solved with Dynamic programming using recursion and memorization. We will take matrix and for 2 strings str1 and st2 with length n and m respectively:
 
-1. for(i=0 to n) LCS[i][0];
-2. for(i=0 to m) LCS[0][j];
-
 ![lcs](https://user-images.githubusercontent.com/32219705/34917783-532c21b0-f953-11e7-939e-2b2c5e723f68.jpg)
 
 LCS[n][m] will be our result.
