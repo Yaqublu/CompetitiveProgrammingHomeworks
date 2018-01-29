@@ -10,7 +10,7 @@ We scan elements of array once, so this algorithm will take linear time O(n)
 
 Kadane's Algorithm [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/KadanesAlgorithm.cpp)
 ----
-First we take 2 variables sum = 0 and max = A[i] (that will contain maximum sum of the array). By scanning elements from left to right, we start to calculate the sum and each time if 'sum' is greater than 'max' we change the value of 'max' to 'sum'. As we need the maximum sum of the contiguous sub-array if 'sum' becomes less than 0 we change the value of 'sum' to 0 (because summarizing negative elements will decrease our sum). As soon as we find new sum that is greater than our 'max', we update 'max'.
+First we take 2 variables sum = 0 and max (that will contain maximum sum of the array). By scanning elements from left to right, we start to calculate the sum and each time if 'sum' is greater than 'max' we change the value of 'max' to 'sum'. As we need the maximum sum of the contiguous sub-array if 'sum' becomes less than 0 we change the value of 'sum' to 0 (because summarizing negative elements will decrease our sum). As soon as we find new sum that is greater than our 'max', we update 'max'.
 
 *Coplexity*
 
@@ -29,12 +29,14 @@ TrappingRainWater [code](https://github.com/Yaqublu/CompetitiveProgrammingHomewo
 
 Sliding Window Maximum [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/SlidingWindowMaximum.cpp)
 -----
-To solve this problem we use Dequeue. The capacity of our dequeue will be k (the size of subarray). We push the indexes of first k elements of the array to our dequeue. For each element in the dequeue, the previous smaller elements are useless, that's why we pop them from the dequeue. The front element od dequeue will contain the largest element of our window.
-Then starting from k-th element of the array to n-1 
+To solve this problem we use Dequeue. The capacity of our dequeue will be k (the size of subarray). We push the indexes of first k elements of the array to our dequeue. For each element in the dequeue, the previous smaller elements are useless, that's why we pop them from the dequeue. The front element of dequeue will contain the largest element of our window.
+Then starting from k-th element of the array to n-1.
+
 -We print the first element of the dequeue
 -We remove element which is already out of our window
 -We remove the elements with are smaller than newly added element
 -We push new element to our dequeue 
+
 At the end, we print the last large element for our last window.
 
 *Coplexity*
