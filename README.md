@@ -32,10 +32,10 @@ Sliding Window Maximum [code](https://github.com/Yaqublu/CompetitiveProgrammingH
 To solve this problem we use Dequeue. The capacity of our dequeue will be k (the size of subarray). We push the indexes of first k elements of the array to our dequeue. For each element in the dequeue, the previous smaller elements are useless, that's why we pop them from the dequeue. The front element of dequeue will contain the largest element of our window.
 Then starting from k-th element of the array to n-1.
 
--We print the first element of the dequeue
--We remove element which is already out of our window
--We remove the elements with are smaller than newly added element
--We push new element to our dequeue 
+-We print the first element of the dequeue.
+-We remove element which is already out of our window.
+-We remove the elements with are smaller than newly added element.
+-We push new element to our dequeue.
 
 At the end, we print the last large element for our last window.
 
