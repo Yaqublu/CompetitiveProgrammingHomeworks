@@ -390,7 +390,7 @@ So the problem runs in O(n^2) time.
 
 Minimum Jump [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/MinJump.cpp)
 ------
-First of all, we should look at some cases. If the length of our array is less than 2, we will not jump (return 0;). Or if our any element of our array is equal 0 (except last one), it means that we cannot jump anymore and stuck (return -1;).
+First of all, we should look at some cases. If the length of our array is less than 2, we will not jump (return 0;). Or if any element of our array is equal 0 (except last one), it means that we cannot jump anymore and stuck (return -1;).
 As the value of elements of array shows max number of jumps that we can do, we will take a new variable ‘s’ and initialize it with a[0]. Starting from the 2nd element of the array we will make s steps. While going through array s steps, we will remember maximum element of the array in the range (i, i+s). It is clear that we need bigger element but it should be near to the end of our array. For example, we will go s=4 steps through {7, 2, 6, 3}, so we will take as a jump element {6}. So how decide that which element we should take?   
 
 ![image1](https://user-images.githubusercontent.com/32219705/34911030-f95c43b0-f8c9-11e7-9833-6f036afb38a9.jpg)
