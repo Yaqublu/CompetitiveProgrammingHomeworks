@@ -240,6 +240,11 @@ For the operation of the update, we do not need to update the whole array. It is
  
 For u update operations we will use O(2u) time and O(n) time for calculating prefix sum. 
 
+#13/10/2017
+-------
+Nested Segments [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Nested%20Segments.cpp)
+-------
+
 #20/10/2017
 -------
 Powerful Array [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Powerful%20Array.cpp)
@@ -268,6 +273,9 @@ For every vertex u, we check if there is an edge to any other vertex v and it do
 *Coplexity*
  
 We will check the connection of each vertex with others and with itself. So it will take O(V*V), where V is number of vertices
+
+Fox and Names [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Fox%20and%20Names.cpp)
+-------
 
 #10/11/2017
 -------
