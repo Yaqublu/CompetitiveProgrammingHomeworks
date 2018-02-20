@@ -26,6 +26,17 @@ We will spend O(n) time for calculating the sum of the element in the array and 
 
 TrappingRainWater [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/TrappingRainWater.cpp)
 ----
+We start to scan our array from its left and right ends. So initially index_top=0 and index_last=n-1.
+While 'index_top' not equal to 'index_last' we will compare a[index_top] and a[index_last], and save the max value of blocks each time in variable 'lenth'.
+1) if a[index_top]<a[index_last] and  a[index_top]>=lenth, we will fill with water the distance between index_last and index_top with height (index_top-lenth). Beside, we will increase index_top++.
+
+2) if a[index_top]<=a[index_last] and  a[index_last]>=lenth, we will fill with water the distance between index_last and index_top with height (index_last-lenth). Beside, we will decrease index_last--.
+
+3) Otherwise, if a[index_top]<=a[index_last] we subscribe the height of the block a[index_top], because in previous cases we fill its place with water, but there cannot be. The same for if a[index_top]<a[index_last] we subscribe the height of the block a[index_last].
+
+*Coplexity*
+
+We scan elements of array one time, so this algorithm will take linear time O(n)
 
 Sliding Window Maximum [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/SlidingWindowMaximum.cpp)
 -----
