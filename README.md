@@ -240,7 +240,7 @@ For the operation of the update, we do not need to update the whole array. It is
  
 For u update operations we will use O(2u) time and O(n) time for calculating prefix sum. 
 
-#13/10/2017
+#18/10/2017
 -------
 Nested Segments [code](https://github.com/Yaqublu/CompetitiveProgrammingHomeworks/blob/master/Nested%20Segments.cpp)
 -------
